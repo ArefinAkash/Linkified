@@ -40,8 +40,8 @@ ROOT_URL=Real URL of your hosted instance, wihout "/" at the end
 ### Deploy with Glitch
 
 You can also deploy Linkified in a Glitch project:
-[![Remix on Glitch](https://cdn.glitch.com/2703baf2-b643-4da7-ab91-7ee2a2d00b5b%2Fremix-button.svg)]
-(https://glitch.com/edit/#!/remix/linkified)
+
+[![Remix on Glitch](https://cdn.glitch.com/2703baf2-b643-4da7-ab91-7ee2a2d00b5b%2Fremix-button.svg)](https://glitch.com/edit/#!/remix/linkified)
 
 ## License
 
