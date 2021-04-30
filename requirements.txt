@@ -1,0 +1,17 @@
+tinydb
+Flask
+Flask-Discord
+python-dotenv
+hashids
+
+
+
+
+
+
+
+
+
+
+
+
