@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+{% block title %}Shorten success!{% endblock %}
+{% block content %}
+    <br />
+    <br />
+<style>
+  
+.alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+  opacity: 1;
+  transition: opacity 0.6s;
+  margin-bottom: 15px;
+  border-radius:700px;
+  justify-content: center;
+}
+
+.alert.success {background-color: #04AA6D;}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 20px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+  
+  .sbmt
+  {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer; 
+  width:160px;
+    border-radius:70px;
+  }
+  .input{
+    margin: 5% 10%;
+    position: relative;
+    width: fit-content;
+}
+input{
+    padding: 10px 10px 10px 5px;
+    font-size: 18px;
+    width: 300px;
+    border:  2px solid ;
+    border-color: transparent transparent ;
+    background-color: white;
+    border-radius: 30px;
+    
+}
+input:focus{outline: none;}
+/*Label */
+label{
+     position: absolute;
+     top: 30%;
+     font-size: 18px;
+     color: rgb(165, 165, 165);
+     left: 3%;
+     z-index: -1;
+     pointer-events: none;
+  
+  }
+</style>
+
+<div class="alert success">
+  <span class="closebtn">&times;</span>  
+  <strong>Success!</strong> 
+  You have successfully shortened the desired URL
+</div>
+<br/>
+  
+<script>
+var close = document.getElementsByClassName("closebtn");
+var i;
+
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function(){
+    var div = this.parentElement;
+    div.style.opacity = "0";
+    setTimeout(function(){ div.style.display = "none"; }, 600);
+  }
+}
+</script>
+
+
+<input type="text" value="{{ request.args["url"] }}" id="myInput">
+<br/>
+<br/>
+<button onclick="myFunction()" class="sbmt">Copy text</button>
+
+<script>
+function myFunction() {
+  var copyText = document.getElementById("myInput");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999)
+  document.execCommand("copy");
+}
+</script>
+<br/>
+<br/>
+<br/>
+<br/>
+
+    <a href="../" style="text-decoration:none" class="btn">Return to the dashboard</a>
+{% endblock %}

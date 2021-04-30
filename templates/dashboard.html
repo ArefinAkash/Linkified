@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+    <h2>Welcome back, {{ user.name }}!</h2>
+    <h3>Shorten a URL</h3>
+    <form method="post" action="../api/shorten">
+    <form action="/action_page.php">
+        <input type="text" name="url" onfocus="this.value=''" value="           URL SHORTENER" required />
+      <br />
+      <br />
+      <input type="submit" value="Submit" class="sbmt">
+</form>
+<style>
+  
+.input{
+    margin: 5% 10%;
+    position: relative;
+    width: fit-content;
+}
+input{
+    padding: 10px 10px 10px 5px;
+    font-size: 18px;
+    width: 250px;
+    border:  2px solid ;
+    border-color: transparent transparent ;
+    background-color: white;
+    border-radius: 30px;
+    
+}
+input:focus{outline: none;}
+/*Label */
+label{
+     position: absolute;
+     top: 30%;
+     font-size: 18px;
+     color: rgb(165, 165, 165);
+     left: 3%;
+     z-index: -1;
+     pointer-events: none;
+  
+  }
+  
+  .sbmt
+  {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer; 
+  width:160px;
+  }
+      </style>
+      
+      
+      <br />
+      <br />
+      
+    <button onclick="document.location='urls'" class="btn">All Shorteners</button>
+<br />
+    <button onclick="document.location='../logout'" class="btn">Log out</button>
+{% endblock %}

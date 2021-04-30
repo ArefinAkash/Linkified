@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% block title %} {% endblock %} - Linkified</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href={{url_for('static', filename='dash.css')}} />
+    <link rel="stylesheet" href={{url_for('static', filename='style.css')}} />
+  </head>
+  <style>
+  
+    body{
+       background: #a8c0ff;
+       background: -webkit-linear-gradient(to right, #3f2b96, #a8c0ff);  
+       background: linear-gradient(to right, #3f2b96, #a8c0ff); 
+    }
+      .main {
+      color: white;
+      position:relative;
+      margin: 0 auto;
+      max-width: 700px;
+      text-align: center;
+      top: 60px;
+    }
+    .btn{
+      
+     background: #232526;  /* fallback for old browsers */
+     background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
+     background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  border: none;
+  color: white;
+  width: 210;
+  padding: 15px 32px;
+  border-radius:50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+    }
+    
+    .btn2{
+    background: #f44336;
+  border: none;
+  color: white;
+  width: 50px;
+  padding: 15px 32px;
+  border-radius:50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+    }
+  
+ 
+  </style>
+
+  <body>
+  
+    <div class="main">
+        <h1 style="font-size: 70px;">Linkified</h1>
+        
+        {% block content %} {% endblock %}
+      </div>
+  </body>
+</html>
