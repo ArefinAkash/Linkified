@@ -1,80 +1,91 @@
 {% extends "base.html" %}
-{% block title %}URLS{% endblock %}
+{% block title %}URLs{% endblock %}
 {% block content %}
 
-<table class="users">
+
+
+<style>
+table.GeneratedTable {
+  width: 50%;
+  background-color: #ffffff;
+  border-collapse: collapse;
+  border-width: 2px;
+  border-color: #ad77ca;
+  border-style: inset;
+  color: #000000;
+  margin:auto;
+  border-radius:50px;
+}
+
+table.GeneratedTable td, table.GeneratedTable th {
+  border-width: 2px;
+  border-color: #ad77ca;
+  border-style: inset;
+  padding: 3px;
+}
+
+table.GeneratedTable thead {
+  background-color: #c69fdf;
+}
+  a{
+    color: #696969;
+    text-decoration: none;
+  }
+  
+  
+  
+  .delete {
+	background-color:#fa1212;
+	border-radius:8px;
+	border:1px solid #d92323;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-size:17px;
+	padding:1px 18px;
+	text-decoration:none;
+}
+.delete:hover {
+	background-color:#ff0000;
+}
+.delete:active {
+	position:relative;
+	top:1px;
+}
+        
+</style>
+<table class="GeneratedTable">
   <thead>
     <tr>
-      <th class="row-1 row-URL">URL</th>
-      <th class="row-2 row-SHORTEN">SHORTEN</th>
-      <th class="row-3 row-MANAGE">MANAGE</th>
+      <th bgcolor="#667db6">PREVIOUS URL LIST</th>
     </tr>
   </thead>
   <tbody>
-    {% for i in l %}
     <tr>
-      <td data-label="URL"><a href="{{ i.original_url }}">{{ i.original_url }}</a> </td>
-      <br/>
-      <td data-label="Shorten"><a href="{{ i.shortened_url }}" class="">{{ i.shortened_url }} </a></td>
-      <br/>
-      <td data-label="Manage"><a href="{{ '../../api/deleteShorten?id=' + i.id }}" class="btn2">Delete</a></td>
+      {% for i in l %}
+      <td bgcolor="#4286f4"><b>URL</b></td>
     </tr>
-    {% endfor %}
+     <tr>
+    
+ <td><a href={{ i.original_url }}>{{ i.original_url }}</a></td>
+    </tr>
+    <tr>
+      <td bgcolor="#74ebd5"><b>Shortened<b></td>
+    </tr>
+     <tr>
+ <td><a href={{ i.shortened_url }}>{{ i.shortened_url }}</a></td>    
+    </tr>
+    <tr>
+      <td bgcolor="#ACB6E5">Manage</td>
+      <tr>
+<td><a href={{ '../../api/deleteShorten?id=' + i.id }} class="delete">Delete</a></td>
+
+    </tr>
+      {% endfor %}
+    </tr>
   </tbody>
 </table>
 
-<style>
-    table {
-  border: 1px solid black;
-  padding: 5px;
-  border-collapse: separate;
-  border-spacing: 20px 10px;
-}
-
-.users {
-  table-layout: fixed;
-  width: 100%;
-  white-space: nowrap;
-}
-/* Column widths are based on these cells */
-.row-URL{
-  width: 30%;
-}
-.row-SHORTEN {
-  width: 40%;
-}
-.row-MANAGE {
-  width: 20%;
-}
-
-.users td {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-   border: 1px solid black;
-   border-radius: 10px;
-}
-.users th {
-background: #56ccf2;  /* fallback for old browsers */
-color: white;
-border-radius: 5px;
-}
-.users td,
-.users th {
-  text-align: center;
-  padding: 5px 10px;
-}
-.users tr{
-  background: transparent;
-   border: 10px solid black;
-  border-radius: 90px;
-}
-  a {
-  color: black;
-  text-decoration: none;
-}
-
-</style>
 <br/>
 <br/>
 <a href="../" style="text-decoration:none" class="btn">Return to the dashboard</a>
